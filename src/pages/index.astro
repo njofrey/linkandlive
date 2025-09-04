@@ -31,7 +31,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
         </section>
 
-        <section class="services section fade-in">
+        <section id="services" class="services section fade-in">
             <div class="container">
                 <div class="services-grid">
                     <div class="service-card">
@@ -58,7 +58,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
         </section>
 
-        <section class="problem-solution section fade-in">
+        <section id="process" class="problem-solution section fade-in">
             <div class="container">
                 <div class="solution-content">
                     <h2 class="solution-title">Tu proceso migratorio</h2>
@@ -137,13 +137,12 @@ import Layout from '../layouts/Layout.astro';
             </div>
         </section>
 
-        <footer class="footer">
+        <footer id="contact" class="footer">
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-section">
                         <h3>Link & Live</h3>
                         <p>Asesoría migratoria especializada para tu nueva vida en Europa.</p>
-                        <p>Barcelona, ES</p>
                     </div>
                     <div class="footer-section">
                         <h4>Contacto</h4>
@@ -161,6 +160,7 @@ import Layout from '../layouts/Layout.astro';
                 </div>
                 <div class="footer-bottom">
                     <p>&copy; 2025 Link & Live. Todos los derechos reservados.</p>
+                    <p class="credit">with love by Nicolas Jofre</p>
                 </div>
             </div>
         </footer>
@@ -708,9 +708,17 @@ import Layout from '../layouts/Layout.astro';
         }
 
         .footer-bottom p {
-            color: #9ca3af;
-            font-size: 14px;
+            color: #6b7280;
+            font-size: 16px;
             margin: 0;
+            text-align: center;
+        }
+        
+        .footer-bottom p.credit {
+            color: #6b7280;
+            font-size: 14px;
+            margin-top: 8px;
+            opacity: 0.9;
         }
 
     .projects-intro {
