@@ -1,43 +1,69 @@
-# Astro Starter Kit: Minimal
+# Link & Live - Asesoría Migratoria
 
-```sh
-npm create astro@latest -- --template minimal
+Sitio web profesional para servicios de asesoría migratoria en Europa, construido con Astro y optimizado para conversión.
+
+## 🚀 Características
+
+- **Hero Section** optimizado para conversión
+- **Sección de Servicios** con 4 bloques principales
+- **Sección Problema/Solución** con beneficios claros
+- **Marquee de ciudades** con efecto de desplazamiento infinito
+- **CTA final** con integración de Calendly
+- **Diseño responsive** para móvil, tablet y desktop
+- **Optimización CRO** implementada
+
+## 🛠️ Tecnologías
+
+- **Framework**: Astro
+- **Estilos**: CSS puro con variables CSS
+- **Integración**: Calendly para agendar consultas
+- **Deploy**: Optimizado para producción
+
+## 📱 Servicios Ofrecidos
+
+- **Pareja de Hecho**: Registro oficial de unión para residencia
+- **NIE**: Número de identificación de extranjero
+- **Ciudadanía Española**: Nacionalidad por residencia
+- **Visa de Estudios**: Permisos para estudiar en España
+
+## 🎯 Optimización CRO
+
+- CTAs claros y prominentes
+- Jerarquía visual optimizada
+- Beneficios específicos y mensurables
+- Social proof integrado
+- Flujo de conversión simplificado
+
+## 🚀 Instalación y Desarrollo
+
+```bash
+# Instalar dependencias
+npm install
+
+# Desarrollo local
+npm run dev
+
+# Build para producción
+npm run build
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 📁 Estructura del Proyecto
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```
+src/
+├── components/          # Componentes reutilizables
+├── layouts/            # Layouts principales
+├── pages/              # Páginas del sitio
+└── styles/             # Estilos globales
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🌍 Información de Contacto
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- **WhatsApp**: +34 692 094 141
+- **Instagram**: [@link.andlive](https://instagram.com/link.andlive)
+- **Email**: linkandlive@gmail.com
+- **Ubicación**: Barcelona, España
 
-Any static assets, like images, can be placed in the `public/` directory.
+## 📄 Licencia
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+© 2025 Link & Live. Todos los derechos reservados.
