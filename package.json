@@ -1,7 +1,8 @@
 {
-  "name": "",
+  "name": "link-and-live",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "description": "Asesoría migratoria especializada para tu nueva vida en Europa",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -10,5 +11,8 @@
   },
   "dependencies": {
     "astro": "^5.12.6"
-  }
+  },
+  "keywords": ["migración", "europa", "asesoría", "nie", "ciudadanía"],
+  "author": "Nicolas Jofre",
+  "license": "MIT"
 }

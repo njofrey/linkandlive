@@ -71,7 +71,7 @@ import Layout from '../layouts/Layout.astro';
                         </div>
                         <div class="feature-item">
                             <span class="feature-icon">✓</span>
-                            <span>Avanza con información siempre actualizada</span>
+                            <span>Información siempre actualizada</span>
                         </div>
                         <div class="feature-item">
                             <span class="feature-icon">✓</span>
@@ -128,7 +128,7 @@ import Layout from '../layouts/Layout.astro';
                     <h2>¿Listo para empezar?</h2>
                     <p class="cta-text">Consulta gratuita de 30 minutos</p>
                     <div class="cta-cta">
-                        <button class="cta-btn" id="hero-calendly-button">
+                        <button class="cta-btn" id="cta-calendly-button">
                             Agendar consulta gratuita
                         </button>
                         <p class="cta-benefits">100% gratuito · Sin compromiso</p>
@@ -165,17 +165,26 @@ import Layout from '../layouts/Layout.astro';
             </div>
         </footer>
 
-        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" crossorigin="anonymous">
+        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" crossorigin="anonymous"></script>
         <script>
             function waitForCalendly() {
-                if (typeof Calendly !== 'undefined') {
-                    const calendlyButtons = document.querySelectorAll('#hero-calendly-button');
-                    calendlyButtons.forEach(button => {
-                        button.addEventListener('click', function() {
-                            Calendly.initPopupWidget({url: 'https://calendly.com/linkandlive/consulta-gratuita'});
+                if (typeof (window as any).Calendly !== 'undefined') {
+                    // Botón del hero
+                    const heroButton = document.querySelector('#hero-calendly-button');
+                    if (heroButton) {
+                        heroButton.addEventListener('click', function() {
+                            (window as any).Calendly.initPopupWidget({url: 'https://calendly.com/linkandlive/consulta-gratuita'});
                         });
-                    });
+                    }
+                    
+                    // Botón del CTA final
+                    const ctaButton = document.querySelector('#cta-calendly-button');
+                    if (ctaButton) {
+                        ctaButton.addEventListener('click', function() {
+                            (window as any).Calendly.initPopupWidget({url: 'https://calendly.com/linkandlive/consulta-gratuita'});
+                        });
+                    }
                 } else {
                     setTimeout(waitForCalendly, 100);
                 }
@@ -439,39 +448,39 @@ import Layout from '../layouts/Layout.astro';
 
     .solution-title {
         color: var(--color-text);
-        margin-bottom: 8px;
-        font-size: 42px;
+        margin-bottom: 12px;
+        font-size: 48px;
         font-weight: 800;
         white-space: nowrap;
     }
 
     .solution-subtitle {
         color: var(--color-accent);
-        margin-bottom: 24px;
-        font-size: 24px;
+        margin-bottom: 28px;
+        font-size: 28px;
         font-weight: 600;
         font-style: italic;
     }
 
     .solution-text {
-        font-size: 20px;
+        font-size: 22px;
         line-height: 1.5;
         color: #6b7280;
-        margin: 0 auto 32px auto;
+        margin: 0 auto 36px auto;
     }
 
     .solution-features {
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 20px;
         align-items: center;
     }
 
     .feature-item {
         display: flex;
         align-items: center;
-        gap: 12px;
-        font-size: 16px;
+        gap: 16px;
+        font-size: 18px;
         font-weight: 500;
         color: var(--color-text);
     }
@@ -479,9 +488,40 @@ import Layout from '../layouts/Layout.astro';
     .feature-icon {
         color: var(--color-accent);
         font-weight: bold;
-        font-size: 18px;
-        width: 20px;
+        font-size: 22px;
+        width: 24px;
         text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        .solution-title {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .solution-subtitle {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .solution-text {
+            font-size: 18px;
+            margin-bottom: 28px;
+        }
+
+        .solution-features {
+            gap: 16px;
+        }
+
+        .feature-item {
+            font-size: 16px;
+            gap: 14px;
+        }
+
+        .feature-icon {
+            font-size: 20px;
+            width: 22px;
+        }
     }
 
 
@@ -669,33 +709,33 @@ import Layout from '../layouts/Layout.astro';
         }
 
         .footer-section h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 12px;
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 16px;
             color: white;
         }
 
         .footer-section h4 {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 600;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             color: white;
         }
 
         .footer-section p {
-            font-size: 15px;
-            line-height: 1.4;
+            font-size: 16px;
+            line-height: 1.5;
             color: #d1d5db;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }
 
         .footer-section a {
             display: block;
             color: #d1d5db;
             text-decoration: none;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             transition: color 0.2s ease;
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 400;
         }
 
@@ -710,13 +750,14 @@ import Layout from '../layouts/Layout.astro';
         }
 
         .footer-bottom p {
-            color: #e5e7eb;
+            color: white;
             font-size: 16px;
             margin: 0;
             text-align: center;
             word-wrap: break-word;
             overflow-wrap: break-word;
             max-width: 100%;
+            padding: 0 16px;
         }
         
         .footer-bottom p.credit {
@@ -735,135 +776,139 @@ import Layout from '../layouts/Layout.astro';
         font-style: italic;
     }
 
-    .transition-section {
-        background-color: var(--color-accent);
-        color: var(--color-bg);
-        text-align: center;
-        padding: 120px 0;
-    }
-
-    .transition-title {
-        font-size: 48px;
-        font-weight: var(--font-weight-bold);
-        margin-bottom: 32px;
-        line-height: 1.2;
-        letter-spacing: -0.01em;
-    }
-
-    .transition-text {
-        font-size: 22px;
-        line-height: 1.6;
-        max-width: 800px;
-        margin: 0 auto;
-        opacity: 0.95;
-    }
-
-    .project-list {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 80px;
-    }
-
-    .project-item {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 24px;
-        align-items: center;
-    }
-
-    @media (min-width: 769px) {
-        .project-list {
-            grid-template-columns: 1fr 1fr;
-            gap: 100px;
-        }
-
-        .project-item-wrapper:nth-child(even) .project-image {
-            order: 2;
-        }
-    }
-
-    .project-image img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-    .project-info h3 {
-        margin-bottom: 8px;
-    }
-    .project-info .services {
-        font-style: italic;
-        opacity: 0.8;
-        margin-bottom: 16px;
-    }
-
-    .calendly-section {
-        background-color: #fafafa;
-        text-align: center;
-        padding: 100px 0;
-    }
-
-    .calendly-intro {
-        font-size: 18px;
-        line-height: 1.6;
-        max-width: 600px;
-        margin: 0 auto 48px auto;
-        opacity: 0.8;
-    }
-
-    .calendly-cta {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 16px;
-    }
-
-    .calendly-btn {
-        background: linear-gradient(135deg, var(--color-accent), #d63b33);
-        color: white;
-        border: none;
-        padding: 20px 40px;
-        font-size: 20px;
-        font-weight: 600;
-        border-radius: 50px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        font-family: var(--font-main);
-        box-shadow: 0 8px 24px rgba(181, 52, 44, 0.3);
-        position: relative;
+    .cities-marquee {
+        padding: 40px 0 40px 0;
         overflow: hidden;
+        position: relative;
+        margin-top: 20px;
+        background-color: #f8f9fa;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
     }
 
-    .calendly-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 12px 32px rgba(181, 52, 44, 0.4);
+    .marquee-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
     }
 
-    .calendly-btn:active {
-        transform: translateY(0);
+       .marquee-wrapper {
+           display: flex;
+       }
+
+       .marquee-content {
+           display: flex;
+           align-items: center;
+           gap: 24px;
+           white-space: nowrap;
+           padding: 0 60px;
+           flex-shrink: 0;
+           animation: marquee 30s linear infinite;
+       }
+
+    .city {
+        font-size: 48px;
+        font-weight: 800;
+        color: var(--color-accent);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        flex-shrink: 0;
+        font-family: 'Bodoni MT', 'Didot', 'Times New Roman', serif;
     }
 
-    .btn-icon {
-        font-size: 18px;
+    .separator {
+        font-size: 36px;
+        color: #6b7280;
+        font-weight: 600;
+        flex-shrink: 0;
+        opacity: 1;
+        margin: 0 12px;
     }
 
-    .btn-arrow {
-        font-size: 18px;
-        transition: transform 0.3s ease;
-    }
+                      @keyframes marquee {
+           from {
+               transform: translateX(0%);
+           }
+           to {
+            transform: translateX(-100%);
+        }
+       }
 
-    .calendly-btn:hover .btn-arrow {
-        transform: translateX(4px);
-    }
 
-    .calendly-note {
-        font-size: 14px;
-        opacity: 0.7;
-        margin: 0;
-        font-style: italic;
-    }
+
+
+        .footer {
+            background-color: var(--color-text);
+            color: white;
+            padding: 60px 0 30px 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: white;
+        }
+
+        .footer-section h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 14px;
+            color: white;
+        }
+
+        .footer-section p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #d1d5db;
+            margin-bottom: 16px;
+        }
+
+        .footer-section a {
+            display: block;
+            color: #d1d5db;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.2s ease;
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #374151;
+        }
+
+        .footer-bottom p {
+            color: white;
+            font-size: 16px;
+            margin: 0;
+            text-align: center;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+            padding: 0 16px;
+        }
+        
+        .footer-bottom p.credit {
+            color: #d1d5db;
+            font-size: 14px;
+            margin-top: 8px;
+            opacity: 0.9;
+        }
 
     @media (max-width: 1024px) and (min-width: 769px) {
         .hero {
@@ -1024,15 +1069,15 @@ import Layout from '../layouts/Layout.astro';
         }
 
         .footer-section h3 {
-            font-size: 18px;
+            font-size: 22px;
         }
 
         .footer-section h4 {
-            font-size: 15px;
+            font-size: 17px;
         }
         
         .footer-section a {
-            font-size: 13px;
+            font-size: 14px;
         }
         
         .footer-bottom p {
