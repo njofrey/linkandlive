@@ -320,20 +320,9 @@ import Layout from '../layouts/Layout.astro';
         left: 100%;
     }
 
-    .hero-btn .btn-arrow {
-        transition: transform 0.3s ease;
-    }
 
-    .hero-btn:hover .btn-arrow {
-        transform: translateX(4px);
-    }
 
-    .hero-note {
-        font-size: 16px;
-        opacity: 0.7;
-        margin: 0;
-        font-style: italic;
-    }
+
 
     .social-proof {
         margin-top: 32px;
@@ -767,148 +756,7 @@ import Layout from '../layouts/Layout.astro';
             opacity: 0.9;
         }
 
-    .projects-intro {
-        font-size: 18px;
-        text-align: center;
-        max-width: 600px;
-        margin: 0 auto 64px auto;
-        opacity: 0.8;
-        font-style: italic;
-    }
 
-    .cities-marquee {
-        padding: 40px 0 40px 0;
-        overflow: hidden;
-        position: relative;
-        margin-top: 20px;
-        background-color: #f8f9fa;
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .marquee-container {
-        width: 100%;
-        overflow: hidden;
-        position: relative;
-    }
-
-       .marquee-wrapper {
-           display: flex;
-       }
-
-       .marquee-content {
-           display: flex;
-           align-items: center;
-           gap: 24px;
-           white-space: nowrap;
-           padding: 0 60px;
-           flex-shrink: 0;
-           animation: marquee 30s linear infinite;
-       }
-
-    .city {
-        font-size: 48px;
-        font-weight: 800;
-        color: var(--color-accent);
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        flex-shrink: 0;
-        font-family: 'Bodoni MT', 'Didot', 'Times New Roman', serif;
-    }
-
-    .separator {
-        font-size: 36px;
-        color: #6b7280;
-        font-weight: 600;
-        flex-shrink: 0;
-        opacity: 1;
-        margin: 0 12px;
-    }
-
-                      @keyframes marquee {
-           from {
-               transform: translateX(0%);
-           }
-           to {
-            transform: translateX(-100%);
-        }
-       }
-
-
-
-
-        .footer {
-            background-color: var(--color-text);
-            color: white;
-            padding: 60px 0 30px 0;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 48px;
-            margin-bottom: 40px;
-        }
-
-        .footer-section h3 {
-            font-size: 26px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: white;
-        }
-
-        .footer-section h4 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 14px;
-            color: white;
-        }
-
-        .footer-section p {
-            font-size: 16px;
-            line-height: 1.5;
-            color: #d1d5db;
-            margin-bottom: 16px;
-        }
-
-        .footer-section a {
-            display: block;
-            color: #d1d5db;
-            text-decoration: none;
-            margin-bottom: 10px;
-            transition: color 0.2s ease;
-            font-size: 15px;
-            font-weight: 400;
-        }
-
-        .footer-section a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #374151;
-        }
-
-        .footer-bottom p {
-            color: white;
-            font-size: 16px;
-            margin: 0;
-            text-align: center;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            max-width: 100%;
-            padding: 0 16px;
-        }
-        
-        .footer-bottom p.credit {
-            color: #d1d5db;
-            font-size: 14px;
-            margin-top: 8px;
-            opacity: 0.9;
-        }
 
     @media (max-width: 1024px) and (min-width: 769px) {
         .hero {
@@ -970,14 +818,7 @@ import Layout from '../layouts/Layout.astro';
             line-height: 1.4;
         }
 
-        .calendly-btn {
-            padding: 16px 32px;
-            font-size: 18px;
-        }
-        
-        .calendly-section {
-            padding: 80px 0;
-        }
+
 
         .problem-solution {
             padding: 30px 0 60px 0;
