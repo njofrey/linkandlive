@@ -8,13 +8,13 @@ import Header from '../components/Header.astro';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <meta name="description" content="Link & Live - Asesoría migratoria especializada para tu nueva vida en Europa. Servicios de NIE, Pareja de Hecho, Ciudadanía Española y Visa de Estudios.">
-    <meta name="keywords" content="asesoría migratoria, NIE, pareja de hecho, ciudadanía española, visa estudios, migración España, Barcelona, Europa, trámites migratorios">
+    <meta name="keywords" content="asesoría migratoria, NIE, pareja de hecho, ciudadanía española, visa estudios, migración España, Barcelona, Europa, trámites migratorios, argentinos en España, uruguayos en España, chilenos en España, Buenos Aires, Montevideo, Santiago de Chile">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Link & Live">
     <meta name="language" content="es">
-    <meta name="geo.region" content="ES-B">
-    <meta name="geo.placename" content="Barcelona">
-    <meta name="geo.position" content="41.3851;2.1734">
+    <meta name="geo.region" content="ES-B,AR-C,AR-B,UY-MO,CL-RM">
+    <meta name="geo.placename" content="Barcelona, Buenos Aires, Montevideo, Santiago de Chile">
+    <meta name="geo.position" content="41.3851;2.1734,-34.6037;-58.3816,-34.9011;-56.1645,-33.4489;-70.6693">
     <meta name="ICBM" content="41.3851, 2.1734">
     <link rel="canonical" href="https://linkandlive.vercel.app/">
     
@@ -75,11 +75,15 @@ import Header from '../components/Header.astro';
             },
             {
                 "@type": "Country", 
-                "name": "Netherlands"
+                "name": "Argentina"
             },
             {
                 "@type": "Country",
-                "name": "Belgium"
+                "name": "Uruguay"
+            },
+            {
+                "@type": "Country",
+                "name": "Chile"
             }
         ],
         "serviceType": [
@@ -131,12 +135,91 @@ import Header from '../components/Header.astro';
             "https://instagram.com/link.andlive",
             "https://wa.me/+34692094141"
         ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+34692094141",
+            "contactType": "customer service",
+            "availableLanguage": ["Spanish", "English"],
+            "areaServed": ["ES", "AR", "UY", "CL"]
+        },
         "priceRange": "$$",
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
             "reviewCount": "150"
         }
+    }
+    </script>
+    
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "¿Cómo obtener el NIE en España?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "El NIE (Número de Identidad de Extranjero) se obtiene presentando la documentación requerida en la comisaría de policía correspondiente. Te ayudamos con todo el proceso y documentación necesaria."
+                }
+            },
+            {
+                "@type": "Question", 
+                "name": "¿Qué documentos necesito para pareja de hecho?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Para pareja de hecho necesitas: DNI/NIE/pasaporte de ambos, certificado de empadronamiento conjunto, certificado de estado civil (soltería/divorcio), declaración jurada de no tener otra pareja registrada, y documentación que acredite la convivencia. Los requisitos varían por comunidad autónoma."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Cuánto tiempo tarda obtener la ciudadanía española?",
+                "acceptedAnswer": {
+                    "@type": "Answer", 
+                    "text": "El plazo legal para resolver una solicitud de nacionalidad española por residencia es de 1 año, pero en la práctica puede tardar entre 2-4 años debido a la carga administrativa. Los plazos de residencia varían: 10 años (general), 5 años (refugiados), 2 años (iberoamericanos), 1 año (casados con español)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Puedo trabajar con visa de estudios en España?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sí, con visa de estudios puedes trabajar hasta 30 horas semanales durante el curso académico y tiempo completo durante las vacaciones. Es necesario obtener autorización previa y mantener la matrícula activa. Te ayudamos con todos los trámites."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Cuánto cuesta la asesoría migratoria?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Nuestros precios varían según el servicio. Ofrecemos consulta gratuita para evaluar tu caso específico y darte un presupuesto personalizado sin compromiso."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Review Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Review",
+        "itemReviewed": {
+            "@type": "ProfessionalService",
+            "name": "Link & Live - Asesoría Migratoria"
+        },
+        "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "María González"
+        },
+        "reviewBody": "Excelente servicio. Me ayudaron con mi pareja de hecho y todo salió perfecto. Muy profesionales y claros en cada paso del proceso."
     }
     </script>
 </head>
