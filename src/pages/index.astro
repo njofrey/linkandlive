@@ -17,6 +17,8 @@ import Layout from '../layouts/Layout.astro';
                         </button>
                         <div class="social-proof">
                             <div class="avatars">
+                                <img src="/images/Avatar/Camila R.png" alt="Camila R" class="avatar" draggable="false">
+                                <img src="/images/Avatar/Juanjo L.png" alt="Juanjo L" class="avatar" draggable="false">
                                 <div class="avatar"></div>
                                 <div class="avatar"></div>
                                 <div class="avatar"></div>
@@ -145,17 +147,17 @@ import Layout from '../layouts/Layout.astro';
                         <p>Asesoría migratoria especializada para tu nueva vida en Europa.</p>
                     </div>
                     <div class="footer-section">
-                        <h4>Contacto</h4>
-                        <a href="https://wa.me/+34692094141">WhatsApp</a>
-                        <a href="https://instagram.com/link.andlive">Instagram</a>
-                        <a href="mailto:linkandlive@gmail.com">Email</a>
-                    </div>
-                    <div class="footer-section">
                         <h4>Servicios</h4>
                         <a href="#services">Pareja de Hecho</a>
                         <a href="#services">NIE</a>
                         <a href="#services">Ciudadanía Española</a>
                         <a href="#services">Visa de Estudios</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Contacto</h4>
+                        <a href="https://wa.me/+34692094141">WhatsApp</a>
+                        <a href="https://instagram.com/link.andlive">Instagram</a>
+                        <a href="mailto:linkandlive@gmail.com">Email</a>
                     </div>
                 </div>
                 <div class="footer-bottom">
@@ -338,10 +340,21 @@ import Layout from '../layouts/Layout.astro';
         border: 2px solid white;
         margin-left: -8px;
         position: relative;
+        object-fit: cover;
+        object-position: center;
     }
 
     .avatar:first-child {
         margin-left: 0;
+    }
+
+    /* Bloquear arrastre de imágenes */
+    img {
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        user-drag: none;
     }
 
     .more-count {

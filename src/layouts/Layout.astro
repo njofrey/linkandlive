@@ -365,6 +365,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 toggleMenu();
             }
         });
+
+        // Cerrar menú automáticamente cuando se cambia el tamaño de pantalla
+        // Esto evita que el menú quede abierto al cambiar de mobile a desktop
+        window.addEventListener('resize', () => {
+            if (mobileNav.classList.contains('is-open')) {
+                // Solo cerrar si estamos en desktop (pantalla > 768px)
+                if (window.innerWidth > 768) {
+                    toggleMenu();
+                }
+            }
+        });
     }
 
 
