@@ -9,7 +9,7 @@ import Layout from '../layouts/Layout.astro';
             <div class="container hero-container">
                 <div class="hero-content">
                     <p class="hero-hook">Instálate en Europa sin sorpresas</p>
-                    <h1 class="hero-headline">ASESORÍA MIGRATORIA CLARA Y CONFIABLE</h1>
+                    <h1 class="hero-headline">Asesoría Migratoria en España - NIE, Pareja de Hecho y Ciudadanía</h1>
                     <p class="hero-subheadline">Te acompañamos desde el minuto cero.</p>
                     <div class="hero-cta">
                         <button class="hero-btn" id="hero-calendly-button">
@@ -17,8 +17,6 @@ import Layout from '../layouts/Layout.astro';
                         </button>
                         <div class="social-proof">
                             <div class="avatars">
-                                <img src="/images/Avatar/Camila R.png" alt="Camila R" class="avatar" draggable="false">
-                                <img src="/images/Avatar/Juanjo L.png" alt="Juanjo L" class="avatar" draggable="false">
                                 <div class="avatar"></div>
                                 <div class="avatar"></div>
                                 <div class="avatar"></div>
@@ -35,6 +33,7 @@ import Layout from '../layouts/Layout.astro';
 
         <section id="services" class="services section fade-in">
             <div class="container">
+                <h2 class="section-title">Nuestros Servicios de Migración</h2>
                 <div class="services-grid">
                     <div class="service-card">
                         <div class="service-icon">📋</div>
@@ -127,7 +126,7 @@ import Layout from '../layouts/Layout.astro';
         <section class="cta-final section fade-in">
             <div class="container">
                 <div class="cta-content">
-                    <h2>¿Listo para empezar?</h2>
+                    <h2>¿Empezamos?</h2>
                     <p class="cta-text">Consulta gratuita de 30 minutos</p>
                     <div class="cta-cta">
                         <button class="cta-btn" id="cta-calendly-button">
@@ -385,6 +384,15 @@ import Layout from '../layouts/Layout.astro';
 
     .services {
         padding: 40px 0 60px 0;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 36px;
+        font-weight: 700;
+        color: var(--color-text);
+        margin-bottom: 40px;
+        line-height: 1.2;
     }
 
     .services-grid {
@@ -697,7 +705,7 @@ import Layout from '../layouts/Layout.astro';
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: 2fr 1fr 1fr;
             gap: 48px;
             margin-bottom: 40px;
         }

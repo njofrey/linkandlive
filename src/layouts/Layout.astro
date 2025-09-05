@@ -8,8 +8,15 @@ import Header from '../components/Header.astro';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <meta name="description" content="Link & Live - Asesoría migratoria especializada para tu nueva vida en Europa. Servicios de NIE, Pareja de Hecho, Ciudadanía Española y Visa de Estudios.">
+    <meta name="keywords" content="asesoría migratoria, NIE, pareja de hecho, ciudadanía española, visa estudios, migración España, Barcelona, Europa, trámites migratorios">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Link & Live">
+    <meta name="language" content="es">
+    <meta name="geo.region" content="ES-B">
+    <meta name="geo.placename" content="Barcelona">
+    <meta name="geo.position" content="41.3851;2.1734">
+    <meta name="ICBM" content="41.3851, 2.1734">
+    <link rel="canonical" href="https://linkandlive.vercel.app/">
     
     <!-- Security Headers -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -43,6 +50,95 @@ import Header from '../components/Header.astro';
     <meta property="twitter:image" content="https://linkandlive.vercel.app/og-image.jpg">
     
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" crossorigin="anonymous">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Link & Live",
+        "description": "Asesoría migratoria especializada para tu nueva vida en Europa. Servicios de NIE, Pareja de Hecho, Ciudadanía Española y Visa de Estudios.",
+        "url": "https://linkandlive.vercel.app",
+        "logo": "https://linkandlive.vercel.app/images/link-and-live.png",
+        "image": "https://linkandlive.vercel.app/images/link-and-live.png",
+        "telephone": "+34692094141",
+        "email": "linkandlive@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "ES",
+            "addressLocality": "Barcelona"
+        },
+        "areaServed": [
+            {
+                "@type": "Country",
+                "name": "Spain"
+            },
+            {
+                "@type": "Country", 
+                "name": "Netherlands"
+            },
+            {
+                "@type": "Country",
+                "name": "Belgium"
+            }
+        ],
+        "serviceType": [
+            "Asesoría Migratoria",
+            "NIE",
+            "Pareja de Hecho", 
+            "Ciudadanía Española",
+            "Visa de Estudios"
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Servicios de Migración",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Pareja de Hecho",
+                        "description": "Registro oficial de tu unión para obtener residencia"
+                    }
+                },
+                {
+                    "@type": "Offer", 
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "NIE",
+                        "description": "Número de identificación de extranjero para trabajar"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service", 
+                        "name": "Ciudadanía Española",
+                        "description": "Obtén la nacionalidad española por residencia"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Visa de Estudios", 
+                        "description": "Estudia en España con todos los permisos necesarios"
+                    }
+                }
+            ]
+        },
+        "sameAs": [
+            "https://instagram.com/link.andlive",
+            "https://wa.me/+34692094141"
+        ],
+        "priceRange": "$$",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "150"
+        }
+    }
+    </script>
 </head>
 <body>
     <Header />
