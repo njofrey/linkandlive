@@ -165,68 +165,24 @@ import Layout from '../layouts/Layout.astro';
             </div>
         </footer>
 
-        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" crossorigin="anonymous">
-        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" crossorigin="anonymous"></script>
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                console.log('DOM loaded, setting up Calendly buttons...');
-                
-                function setupCalendlyButtons() {
-                    console.log('Setting up Calendly buttons...');
-                    
-                    // Botón del hero
-                    const heroButton = document.querySelector('#hero-calendly-button');
-                    if (heroButton) {
-                        console.log('Hero button found, adding event listener...');
-                        heroButton.addEventListener('click', function(e) {
-                            e.preventDefault();
-                            console.log('Hero button clicked!');
-                            
-                            if (typeof window.Calendly !== 'undefined') {
-                                console.log('Calendly is available, opening widget...');
-                                window.Calendly.initPopupWidget({
-                                    url: 'https://calendly.com/linkandlive/consulta-gratuita'
-                                });
-                            } else {
-                                console.log('Calendly not available, opening direct link...');
-                                window.open('https://calendly.com/linkandlive/consulta-gratuita', '_blank');
-                            }
+            function waitForCalendly() {
+                if (typeof Calendly !== 'undefined') {
+                    const calendlyButtons = document.querySelectorAll('#hero-calendly-button, #cta-calendly-button');
+                    calendlyButtons.forEach(button => {
+                        button.addEventListener('click', function() {
+                            Calendly.initPopupWidget({url: 'https://calendly.com/linkandlive/30min'});
                         });
-                    } else {
-                        console.log('Hero button not found!');
-                    }
-                    
-                    // Botón del CTA final
-                    const ctaButton = document.querySelector('#cta-calendly-button');
-                    if (ctaButton) {
-                        console.log('CTA button found, adding event listener...');
-                        ctaButton.addEventListener('click', function(e) {
-                            e.preventDefault();
-                            console.log('CTA button clicked!');
-                            
-                            if (typeof window.Calendly !== 'undefined') {
-                                console.log('Calendly is available, opening widget...');
-                                window.Calendly.initPopupWidget({
-                                    url: 'https://calendly.com/linkandlive/consulta-gratuita'
-                                });
-                            } else {
-                                console.log('Calendly not available, opening direct link...');
-                                window.open('https://calendly.com/linkandlive/consulta-gratuita', '_blank');
-                            }
-                        });
-                    } else {
-                        console.log('CTA button not found!');
-                    }
+                    });
+                } else {
+                    setTimeout(waitForCalendly, 100);
                 }
-                
-                // Intentar configurar inmediatamente
-                setupCalendlyButtons();
-                
-                // También intentar después de un delay por si Calendly se carga después
-                setTimeout(setupCalendlyButtons, 1000);
-                setTimeout(setupCalendlyButtons, 3000);
-            });
+            }
+            waitForCalendly();
         </script>
+
     </main>
 </Layout>
 
