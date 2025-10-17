@@ -1,0 +1,567 @@
+---
+import Header from '../components/Header.astro';
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="description" content="Link & Live - Asesoría migratoria especializada para tu nueva vida en Europa. Servicios de NIE, Pareja de Hecho, Ciudadanía Española y Visa de Estudios.">
+    <meta name="keywords" content="asesoría migratoria, NIE, pareja de hecho, ciudadanía española, visa estudios, migración España, Barcelona, Europa, trámites migratorios, argentinos en España, uruguayos en España, chilenos en España, Buenos Aires, Montevideo, Santiago de Chile">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Link & Live">
+    <meta name="language" content="es">
+    <meta name="geo.region" content="ES-B,AR-C,AR-B,UY-MO,CL-RM">
+    <meta name="geo.placename" content="Barcelona, Buenos Aires, Montevideo, Santiago de Chile">
+    <meta name="geo.position" content="41.3851;2.1734,-34.6037;-58.3816,-34.9011;-56.1645,-33.4489;-70.6693">
+    <meta name="ICBM" content="41.3851, 2.1734">
+    <link rel="canonical" href="https://linkandlive.eu/">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://assets.calendly.com https://calendly.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://assets.calendly.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://calendly.com; frame-src https://calendly.com;">
+    
+    <!-- HTTPS Strict Transport Security -->
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+    
+    <!-- Permissions Policy -->
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()">
+    
+    <title>Link & Live - Asesoría Migratoria en Europa</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://linkandlive.eu/">
+    <meta property="og:title" content="Link & Live - Asesoría Migratoria en Europa">
+    <meta property="og:description" content="Asesoría migratoria especializada para tu nueva vida en Europa. Servicios de NIE, Pareja de Hecho, Ciudadanía Española y Visa de Estudios.">
+    <meta property="og:image" content="https://linkandlive.eu/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://linkandlive.eu/">
+    <meta property="twitter:title" content="Link & Live - Asesoría Migratoria en Europa">
+    <meta property="twitter:description" content="Asesoría migratoria especializada para tu nueva vida en Europa. Servicios de NIE, Pareja de Hecho, Ciudadanía Española y Visa de Estudios.">
+    <meta property="twitter:image" content="https://linkandlive.eu/og-image.jpg">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" crossorigin="anonymous">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Link & Live",
+        "description": "Asesoría migratoria especializada para tu nueva vida en Europa. Servicios de NIE, Pareja de Hecho, Ciudadanía Española y Visa de Estudios.",
+        "url": "https://linkandlive.eu",
+        "logo": "https://linkandlive.eu/images/link-and-live.png",
+        "image": "https://linkandlive.eu/images/link-and-live.png",
+        "telephone": "+34692094141",
+        "email": "info@linkandlive.eu",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "ES",
+            "addressLocality": "Barcelona"
+        },
+        "areaServed": [
+            {
+                "@type": "Country",
+                "name": "Spain"
+            },
+            {
+                "@type": "Country", 
+                "name": "Argentina"
+            },
+            {
+                "@type": "Country",
+                "name": "Uruguay"
+            },
+            {
+                "@type": "Country",
+                "name": "Chile"
+            }
+        ],
+        "serviceType": [
+            "Asesoría Migratoria",
+            "NIE",
+            "Pareja de Hecho", 
+            "Ciudadanía Española",
+            "Visa de Estudios"
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Servicios de Migración",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Pareja de Hecho",
+                        "description": "Registro oficial de tu unión para obtener residencia"
+                    }
+                },
+                {
+                    "@type": "Offer", 
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "NIE",
+                        "description": "Número de identificación de extranjero para trabajar"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service", 
+                        "name": "Ciudadanía Española",
+                        "description": "Obtén la nacionalidad española por residencia"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Visa de Estudios", 
+                        "description": "Estudia en España con todos los permisos necesarios"
+                    }
+                }
+            ]
+        },
+        "sameAs": [
+            "https://instagram.com/link.andlive",
+            "https://wa.me/+34692094141"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+34692094141",
+            "contactType": "customer service",
+            "availableLanguage": ["Spanish", "English"],
+            "areaServed": ["ES", "AR", "UY", "CL"]
+        },
+        "priceRange": "$$",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "150"
+        }
+    }
+    </script>
+    
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "¿Cómo obtener el NIE en España?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "El NIE (Número de Identidad de Extranjero) se obtiene presentando la documentación requerida en la comisaría de policía correspondiente. Te ayudamos con todo el proceso y documentación necesaria."
+                }
+            },
+            {
+                "@type": "Question", 
+                "name": "¿Qué documentos necesito para pareja de hecho?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Para pareja de hecho necesitas: DNI/NIE/pasaporte de ambos, certificado de empadronamiento conjunto, certificado de estado civil (soltería/divorcio), declaración jurada de no tener otra pareja registrada, y documentación que acredite la convivencia. Los requisitos varían por comunidad autónoma."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Cuánto tiempo tarda obtener la ciudadanía española?",
+                "acceptedAnswer": {
+                    "@type": "Answer", 
+                    "text": "El plazo legal para resolver una solicitud de nacionalidad española por residencia es de 1 año, pero en la práctica puede tardar entre 2-4 años debido a la carga administrativa. Los plazos de residencia varían: 10 años (general), 5 años (refugiados), 2 años (iberoamericanos), 1 año (casados con español)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Puedo trabajar con visa de estudios en España?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sí, con visa de estudios puedes trabajar hasta 30 horas semanales durante el curso académico y tiempo completo durante las vacaciones. Es necesario obtener autorización previa y mantener la matrícula activa. Te ayudamos con todos los trámites."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Cuánto cuesta la asesoría migratoria?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Nuestros precios varían según el servicio. Ofrecemos consulta gratuita para evaluar tu caso específico y darte un presupuesto personalizado sin compromiso."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Review Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Review",
+        "itemReviewed": {
+            "@type": "ProfessionalService",
+            "name": "Link & Live - Asesoría Migratoria"
+        },
+        "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "María González"
+        },
+        "reviewBody": "Excelente servicio. Me ayudaron con mi pareja de hecho y todo salió perfecto. Muy profesionales y claros en cada paso del proceso."
+    }
+    </script>
+</head>
+<body>
+    <Header />
+    <slot />
+</body>
+</html>
+
+<style is:global>
+    :root {
+        --color-bg: #F5F4EF;
+        --color-text: #222222;
+        --color-accent: #B5342C;
+        --font-main: 'Manrope', sans-serif;
+
+    }
+
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 100px;
+    }
+
+    body {
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        font-family: var(--font-main);
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.5;
+        margin: 0;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        letter-spacing: -0.01em;
+        max-width: 100vw;
+        box-sizing: border-box;
+        transition: overflow 0.3s ease;
+    }
+
+    /* Bloquear scroll cuando el menú mobile está abierto */
+    body.menu-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .section {
+        padding: 80px 0;
+    }
+
+    a {
+        color: var(--color-text);
+        text-decoration: none;
+        transition: color 0.2s ease;
+        font-weight: 500;
+    }
+    
+    a:hover {
+        color: var(--color-accent);
+    }
+
+
+
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .fade-in.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    button, .btn {
+        transition: all 0.2s ease;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 32px;
+        padding-bottom: 32px;
+        position: relative;
+        z-index: 1002;
+    }
+
+    .header-logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+    
+    .header-logo img {
+        height: 80px;
+        width: auto;
+        max-width: 350px;
+        object-fit: contain;
+        transition: opacity 0.2s ease;
+    }
+    
+    .header-logo:hover img {
+        opacity: 0.8;
+    }
+
+    .header-nav a {
+        margin-left: 32px;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        transition: color 0.2s ease;
+    }
+
+    .header-burger-btn {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001;
+        position: relative;
+        width: 28px;
+        height: 28px;
+    }
+    .header-burger-btn span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: var(--color-text);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        position: absolute;
+        left: 0;
+    }
+    .header-burger-btn span:nth-child(1) {
+        top: 6px;
+    }
+    .header-burger-btn span:nth-child(2) {
+        top: 18px;
+    }
+    .header-burger-btn.is-active span {
+        background-color: var(--color-bg);
+    }
+    .header-burger-btn.is-active span:nth-child(1) {
+        transform: translateY(7px) rotate(135deg);
+    }
+    .header-burger-btn.is-active span:nth-child(2) {
+        transform: translateY(-7px) rotate(-135deg);
+    }
+
+    .mobile-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--color-accent);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        z-index: 1000;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        padding: 0 48px;
+        /* Ocultar por defecto para evitar flash */
+        visibility: hidden;
+        opacity: 0;
+    }
+    
+    .mobile-nav.is-open {
+        transform: translateX(0);
+        visibility: visible;
+        opacity: 1;
+    }
+
+
+    .mobile-nav-link {
+        color: var(--color-bg);
+        text-decoration: none;
+        font-size: 28px;
+        font-weight: 600;
+        margin: 16px 0;
+        transition: opacity 0.2s ease;
+        letter-spacing: -0.01em;
+    }
+
+    .mobile-nav-link:hover {
+        color: var(--color-bg);
+        opacity: 0.8;
+    }
+
+
+
+
+
+
+
+
+
+    @media (max-width: 768px) {
+        .section {
+            padding: 60px 0;
+        }
+
+        .header-nav {
+            display: none;
+        }
+        .header-burger-btn {
+            display: block;
+        }
+        .header-logo img {
+            height: 80px;
+            max-width: 320px;
+        }
+        
+        /* Ocultar logo cuando el menú mobile está abierto */
+        .header-logo.hidden {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+
+        
+        h1 {
+            font-size: 42px;
+            letter-spacing: -0.02em;
+            line-height: 1.0;
+        }
+        h2 {
+            font-size: 36px;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+        h3 {
+            font-size: 26px;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+
+
+    }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(element => {
+        observer.observe(element);
+    });
+
+    const burgerBtn = document.querySelector('.header-burger-btn');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const headerLogo = document.querySelector('.header-logo');
+    const body = document.body;
+
+    if (burgerBtn && mobileNav) {
+        const toggleMenu = () => {
+            const isOpen = mobileNav.classList.contains('is-open');
+            
+            burgerBtn.classList.toggle('is-active');
+            mobileNav.classList.toggle('is-open');
+            
+            if (headerLogo) {
+                headerLogo.classList.toggle('hidden');
+            }
+            
+            // Bloquear/desbloquear scroll del body
+            if (!isOpen) {
+                body.classList.add('menu-open');
+            } else {
+                body.classList.remove('menu-open');
+            }
+        };
+
+        burgerBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileNav.classList.contains('is-open')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Cerrar menú al hacer escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) {
+                toggleMenu();
+            }
+        });
+
+        // Cerrar menú automáticamente cuando se cambia el tamaño de pantalla
+        // Esto evita que el menú quede abierto al cambiar de mobile a desktop
+        window.addEventListener('resize', () => {
+            if (mobileNav.classList.contains('is-open')) {
+                // Solo cerrar si estamos en desktop (pantalla > 768px)
+                if (window.innerWidth > 768) {
+                    toggleMenu();
+                }
+            }
+        });
+    }
+
+
+});
+</script>
+
+<style>
+</style>
+
+        
