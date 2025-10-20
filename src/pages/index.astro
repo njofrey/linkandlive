@@ -27,18 +27,27 @@ import Layout from '../layouts/Layout.astro';
                     <p class="hero-subheadline">Un plan claro. Un equipo real. Un acompañamiento que funciona.</p>
                     <div class="hero-cta">
                         <button class="hero-btn" id="hero-calendly-button">
-                            Agendar llamada gratuita
+                            Agendar llamada ahora
                         </button>
                         <div class="social-proof">
-                            <div class="avatars">
-                                <div class="avatar"></div>
-                                <div class="avatar"></div>
-                                <div class="avatar"></div>
-                                <div class="avatar"></div>
-                                <div class="avatar"></div>
-                                <div class="more-count">+</div>
-                            </div>
-                            <p class="social-text">Más de <strong>150 personas</strong> ya se mudaron exitosamente</p>
+                            <p class="social-text">
+                                <svg class="inline-check" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                Primera consulta gratuita
+                            </p>
+                            <p class="social-text">
+                                <svg class="inline-check" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                Especializadas en migración española
+                            </p>
+                            <p class="social-text">
+                                <svg class="inline-check" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                Más de <strong>50 personas</strong> ya confiaron en nosotros
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -248,7 +257,7 @@ import Layout from '../layouts/Layout.astro';
                                 <div class="member-info">
                                     <h3 class="member-name">Georgina Dell'Acqua</h3>
                                     <p class="member-role">CEO & Directora Legal</p>
-                                    <p class="member-description">Abogada y migrante. Te acompaña en cada trámite con el respaldo legal y la experiencia de quien ya atravesó el proceso. Su recorrido personal y profesional dieron origen a Link & Live, un proyecto que une derecho, migración y vida real.</p>
+                                    <p class="member-description">Abogada especializada en migración española. Ella misma vivió cada trámite que ahora te ayuda a resolver. Su experiencia personal y profesional te garantiza un proceso sin sorpresas.</p>
                                 </div>
                             </div>
                             
@@ -261,7 +270,7 @@ import Layout from '../layouts/Layout.astro';
                                 <div class="member-info">
                                     <h3 class="member-name">Agustina Yusef</h3>
                                     <p class="member-role">Co-Fundadora & Operaciones</p>
-                                    <p class="member-description">Social media manager y migrante. Es fotógrafa, creadora de contenido y técnica en gestión hotelera. Todo eso le ayuda a entender y asesorar sobre lo que implica migrar.</p>
+                                    <p class="member-description">Experta en relocalización que conoce todos los desafíos de mudarse a Europa. Su background multidisciplinario te asegura que cada detalle esté cubierto, desde el papeleo hasta la adaptación.</p>
                                 </div>
                             </div>
                         </div>
@@ -597,10 +606,23 @@ import Layout from '../layouts/Layout.astro';
         gap: 12px;
     }
 
-    .avatars {
-        display: flex;
-        align-items: center;
-        gap: -8px;
+    .inline-check {
+        width: 16px;
+        height: 16px;
+        color: #22c55e;
+        stroke-width: 2.5;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 6px;
+        margin-top: -2px;
+    }
+
+    .urgency-text {
+        font-size: 14px;
+        color: #64748b;
+        margin: 8px 0 0 0;
+        font-weight: 500;
+        text-align: center;
     }
 
     .avatar {
