@@ -289,7 +289,20 @@ import Layout from '../layouts/Layout.astro';
                         <button class="cta-btn" id="cta-calendly-button">
                             Agendar llamada gratuita
                         </button>
-                        <p class="cta-benefits">15 minutos • Sin compromiso</p>
+                        <div class="cta-benefits">
+                            <p class="social-text">
+                                <svg class="inline-check" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                15 minutos
+                            </p>
+                            <p class="social-text">
+                                <svg class="inline-check" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                Sin compromiso
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1081,12 +1094,11 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .cta-benefits {
-        font-size: 16px;
-        color: #6b7280;
-        margin: 16px 0 0 0;
-        font-weight: 500;
-        letter-spacing: -0.01em;
-        opacity: 0.8;
+        margin-top: 24px;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        justify-content: center;
     }
 
     .cities-section {
@@ -1524,8 +1536,9 @@ import Layout from '../layouts/Layout.astro';
         }
 
         .cta-benefits {
-            font-size: 14px;
-            margin: 12px 0 0 0;
+            margin-top: 20px;
+            flex-direction: column;
+            gap: 10px;
         }
 
         .cities-section {
