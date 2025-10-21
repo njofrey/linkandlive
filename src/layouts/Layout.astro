@@ -483,7 +483,29 @@ import Header from '../components/Header.astro';
 </style>
 
 <script>
+// Forzar scroll al top al cargar/recargar la página
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+}
+
+// Scroll al top antes de que cargue el DOM
+window.addEventListener('beforeunload', function() {
+    window.scrollTo(0, 0);
+});
+
+// Asegurar scroll al top al cargar, solo si no hay hash en la URL
+if (!window.location.hash) {
+    window.scrollTo(0, 0);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
+    // Scroll al top al cargar el DOM, solo si no hay hash en la URL
+    if (!window.location.hash) {
+        setTimeout(() => {
+            window.scrollTo(0, 0);
+        }, 0);
+    }
+
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
