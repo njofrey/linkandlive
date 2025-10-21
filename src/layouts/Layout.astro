@@ -483,12 +483,6 @@ import Header from '../components/Header.astro';
 </style>
 
 <script>
-// Prevenir restauración automática del scroll del navegador
-// Esto evita el "salto" al recargar, pero respeta la posición del usuario
-if (history.scrollRestoration) {
-    history.scrollRestoration = 'manual';
-}
-
 document.addEventListener('DOMContentLoaded', function() {
     const observerOptions = {
         threshold: 0.1,
