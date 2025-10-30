@@ -250,9 +250,7 @@ import Layout from '../layouts/Layout.astro';
                         <div class="team-grid">
                             <div class="team-member">
                                 <div class="member-avatar">
-                                    <div class="avatar-placeholder">
-                                        <span class="avatar-initials">GD</span>
-                                    </div>
+                                    <img src="/images/Georgina.png?v=brighter-1" alt="Georgina Dell'Acqua" class="avatar-img" />
                                 </div>
                                 <div class="member-info">
                                     <h3 class="member-name">Georgina Dell'Acqua</h3>
@@ -264,9 +262,7 @@ import Layout from '../layouts/Layout.astro';
                             
                             <div class="team-member">
                                 <div class="member-avatar">
-                                    <div class="avatar-placeholder">
-                                        <span class="avatar-initials">AY</span>
-                                    </div>
+                                    <img src="/images/Agus.png?v=brighter-1" alt="Agustina Yusef" class="avatar-img" />
                                 </div>
                                 <div class="member-info">
                                     <h3 class="member-name">Agustina Yusef</h3>
@@ -1774,6 +1770,16 @@ import Layout from '../layouts/Layout.astro';
         flex-shrink: 0;
     }
 
+    .avatar-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        border: 3px solid white;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
     .avatar-placeholder {
         width: 80px;
         height: 80px;
@@ -1893,6 +1899,11 @@ import Layout from '../layouts/Layout.astro';
 
         .avatar-initials {
             font-size: 20px;
+        }
+
+        .avatar-img {
+            width: 60px;
+            height: 60px;
         }
 
         .member-name {
