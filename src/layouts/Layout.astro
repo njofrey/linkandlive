@@ -17,6 +17,8 @@ import Header from '../components/Header.astro';
     <meta name="geo.position" content="41.3851;2.1734,-34.6037;-58.3816,-34.9011;-56.1645,-33.4489;-70.6693">
     <meta name="ICBM" content="41.3851, 2.1734">
     <link rel="canonical" href="https://linkandlive.eu/">
+    <link rel="alternate" hreflang="es" href="https://linkandlive.eu/" />
+    <link rel="alternate" hreflang="x-default" href="https://linkandlive.eu/" />
     
     <!-- Security Headers -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -61,7 +63,7 @@ import Header from '../components/Header.astro';
         "url": "https://linkandlive.eu",
         "logo": "https://linkandlive.eu/images/link-and-live.png",
         "image": "https://linkandlive.eu/images/link-and-live.png",
-        "telephone": "+34692094141",
+        "telephone": "+32492830729",
         "email": "info@linkandlive.eu",
         "address": {
             "@type": "PostalAddress",
@@ -133,11 +135,11 @@ import Header from '../components/Header.astro';
         },
         "sameAs": [
             "https://instagram.com/link.andlive",
-            "https://wa.me/+34692094141"
+            "https://wa.me/32492830729"
         ],
         "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": "+34692094141",
+            "telephone": "+32492830729",
             "contactType": "customer service",
             "availableLanguage": ["Spanish", "English"],
             "areaServed": ["ES", "AR", "UY", "CL"]
@@ -347,12 +349,62 @@ import Header from '../components/Header.astro';
         opacity: 0.8;
     }
 
+    .header-nav {
+        display: flex;
+        align-items: center;
+        gap: 0;
+    }
+
     .header-nav a {
         margin-left: 32px;
         font-size: 16px;
         font-weight: 500;
         letter-spacing: -0.01em;
         transition: color 0.2s ease;
+    }
+
+    /* Language Toggle */
+    .lang-toggle {
+        display: inline-flex;
+        align-items: center;
+        background: #f3f4f6;
+        border-radius: 20px;
+        padding: 2px;
+        border: 1px solid #e5e7eb;
+        gap: 0;
+        margin-left: 32px;
+    }
+
+    .lang-option {
+        padding: 5px 14px;
+        font-size: 13px;
+        font-weight: 600;
+        border: none;
+        background: transparent;
+        color: #9ca3af;
+        cursor: pointer;
+        border-radius: 16px;
+        transition: all 0.25s ease;
+        font-family: var(--font-main);
+        letter-spacing: 0.05em;
+        line-height: 1;
+    }
+
+    .lang-option.active {
+        background: #374151;
+        color: white;
+        box-shadow: 0 2px 6px rgba(55, 65, 81, 0.2);
+    }
+
+    .lang-option:hover:not(.active) {
+        color: #6b7280;
+    }
+
+    /* Header actions (mobile toggle + burger wrapper) */
+    .header-actions {
+        display: none;
+        align-items: center;
+        gap: 16px;
     }
 
     .header-burger-btn {
@@ -449,6 +501,19 @@ import Header from '../components/Header.astro';
         .header-nav {
             display: none;
         }
+        .header-actions {
+            display: flex;
+        }
+        .header-actions .lang-toggle {
+            margin-left: 0;
+        }
+        .header-actions .lang-option {
+            padding: 6px 14px;
+            font-size: 13px;
+            min-height: 36px;
+            display: flex;
+            align-items: center;
+        }
         .header-burger-btn {
             display: block;
         }
@@ -457,11 +522,15 @@ import Header from '../components/Header.astro';
             max-width: 320px;
         }
         
-        /* Ocultar logo cuando el menú mobile está abierto */
+        /* Ocultar logo y toggle cuando el menú mobile está abierto */
         .header-logo.hidden {
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.3s ease;
+        }
+        body.menu-open .header-actions .lang-toggle {
+            opacity: 0;
+            pointer-events: none;
         }
 
 
@@ -570,7 +639,218 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<style>
-</style>
+<script is:inline>
+(function() {
+    var translations = {
+        es: {
+            "nav.services": "Servicios",
+            "nav.process": "Proceso",
+            "nav.testimonials": "Testimonios",
+            "nav.about": "Nosotros",
+            "nav.contact": "Contacto",
+            "cookie.title": "Pol\u00EDtica de cookies",
+            "cookie.text": "Este sitio no utiliza cookies propias, solo se usan cookies cuando agendas una cita mediante Calendly.",
+            "cookie.subtext": "Tu privacidad es importante.",
+            "cookie.link": "M\u00E1s info",
+            "hero.hook": "Inst\u00E1late en Europa sin sorpresas",
+            "hero.headline": "Asesor\u00EDa migratoria clara y confiable",
+            "hero.subheadline": "Un plan claro. Un equipo real. Un acompa\u00F1amiento que funciona.",
+            "hero.cta": "Agendar llamada ahora",
+            "hero.social1": "Primera consulta gratuita",
+            "hero.social2": "Especializadas en migraci\u00F3n espa\u00F1ola",
+            "hero.social3": "M\u00E1s de <strong>50 personas</strong> ya confiaron en nosotros",
+            "services.title": "Servicios",
+            "services.pareja.title": "Pareja de Hecho",
+            "services.pareja.desc": "Registro oficial de tu uni\u00F3n para obtener residencia.",
+            "services.nie.title": "NIE",
+            "services.nie.desc": "N\u00FAmero de identificaci\u00F3n de extranjero para trabajar.",
+            "services.ciudadania.title": "Ciudadan\u00EDa Espa\u00F1ola",
+            "services.ciudadania.desc": "Obt\u00E9n la nacionalidad espa\u00F1ola por residencia.",
+            "services.housing.title": "Housing",
+            "services.housing.desc": "Encontramos tu hogar ideal en Europa.",
+            "services.additional": "Servicios complementarios",
+            "services.visa.title": "Visa de Estudios",
+            "services.visa.desc": "Permisos para estudiar legalmente en Espa\u00F1a.",
+            "services.nomad.title": "Visa N\u00F3made Digital",
+            "services.nomad.desc": "Permiso para trabajar remotamente desde Espa\u00F1a.",
+            "services.swapping.title": "Swapping",
+            "services.swapping.desc": "Intercambio de alojamiento y servicios.",
+            "services.empadronamiento.title": "Empadronamiento y Cuenta Bancaria",
+            "services.empadronamiento.desc": "Alta oficial y apertura de cuenta espa\u00F1ola.",
+            "services.docs.title": "Documentos Legalizados",
+            "services.docs.desc": "Apostillas y antecedentes desde Argentina/Uruguay.",
+            "services.legal.title": "Asesor\u00EDa Legal",
+            "services.legal.desc": "Consultor\u00EDa especializada en derecho espa\u00F1ol.",
+            "why.title": "\u00BFPor qu\u00E9 Link & Live?",
+            "why.intro": "No somos una gestor\u00EDa ni un despacho tradicional. Lo que ofrecemos es acompa\u00F1amiento legal, real y personal, para personas que se mudan o necesitan conectar con Europa de forma segura y confiable.",
+            "why.all.title": "Todo en un solo lugar",
+            "why.all.desc": "Tr\u00E1mites migratorios, vivienda y asesor\u00EDa legal integrados en un plan claro.",
+            "why.ready.title": "Lleg\u00E1 con todo listo",
+            "why.ready.desc": "Papeles, cuenta, vivienda y seguro m\u00E9dico resueltos antes de empezar tu nueva vida.",
+            "why.trust.title": "Asesor\u00EDa confiable",
+            "why.trust.desc": "Un equipo legal que traduce lo complejo en pasos simples y seguros.",
+            "why.accompany.title": "Acompa\u00F1amiento real",
+            "why.accompany.desc": "No solo informaci\u00F3n: te guiamos en cada paso hasta que est\u00E9s instalad@.",
+            "cities.label": "Operamos principalmente en",
+            "cities.brussels": "BRUSELAS",
+            "testimonials.title": "Historias que nos inspiran",
+            "testimonials.1": "\u201CEn una semana ten\u00EDa piso y papeles listos en Barcelona.\u201D",
+            "testimonials.1.location": "Montevideo",
+            "testimonials.2": "\u201CClaridad total en cada paso, cero confusi\u00F3n con extranjer\u00EDa.\u201D",
+            "testimonials.2.location": "Buenos Aires",
+            "testimonials.3": "\u201CMe ayudaron a tramitar la ciudadan\u00EDa espa\u00F1ola de mi padre y mi hermano.\u201D",
+            "testimonials.3.location": "Ciudad de la Costa",
+            "testimonials.4": "\u201CLink & Live arranged my NIE as an EU citizen, making my move to Spain simple and stress-free.\u201D",
+            "testimonials.4.location": "Bruselas",
+            "about.title": "About Link & Live",
+            "about.story.header": "Por qu\u00E9 empezamos Link & Live",
+            "about.story.body": "Sabemos lo que se siente llegar a un pa\u00EDs nuevo, sin conocer los tr\u00E1mites, sin saber d\u00F3nde vivir, con la incertidumbre de no tener todo resuelto. Por eso dise\u00F1amos un servicio que te acompa\u00F1e en cada paso, porque entendemos que tu tranquilidad es nuestra prioridad.",
+            "about.georgina.role": "CEO & Directora Legal",
+            "about.georgina.desc": "Abogada y migrante. Ofrece acompa\u00F1amiento en cada tr\u00E1mite con el respaldo legal y la experiencia de quien ya atraves\u00F3 el proceso. Su recorrido personal y profesional dieron origen a Link and Live, un proyecto que une derecho, migraci\u00F3n y vida real.",
+            "about.georgina.edu": "Egresada de la Universidad de la Rep\u00FAblica (Uruguay) en 2014, cuenta con formaci\u00F3n en Pol\u00EDticas P\u00FAblicas, Derechos Sociales y Sostenibilidad (UB), Asesoramiento Corporativo (UM) y Responsabilidad Civil Profundizada (UCU).",
+            "about.agustina.role": "Co-Fundadora & Operaciones",
+            "about.agustina.desc": "Social media manager y migrante. Es fot\u00F3grafa, creadora de contenido y t\u00E9cnica en gesti\u00F3n hotelera. Su experiencia multidisciplinaria la capacita para entender y asesorar sobre lo que implica migrar, aportando una perspectiva integral al proceso de relocalizaci\u00F3n.",
+            "about.agustina.edu": "T\u00E9cnica en Gerencia de Hoteles y Alojamientos Tur\u00EDsticos, formada en ITHU \u2013 Polit\u00E9cnico de Montevideo. Cuenta con una s\u00F3lida base en gesti\u00F3n, atenci\u00F3n al cliente y organizaci\u00F3n dentro del sector hotelero y tur\u00EDstico.",
+            "cta.title": "\u00BFEmpezamos?",
+            "cta.subtitle": "Hablemos de tu proyecto migratorio",
+            "cta.button": "Agendar llamada gratuita",
+            "cta.benefit1": "15 minutos",
+            "cta.benefit2": "Sin compromiso",
+            "footer.description": "Asesor\u00EDa migratoria especializada para tu nueva vida en Europa.",
+            "footer.services": "Servicios",
+            "footer.contact": "Contacto",
+            "footer.privacy": "Privacidad",
+            "footer.terms": "T\u00E9rminos de Servicio",
+            "footer.legal": "Aviso Legal",
+            "footer.copyright": "\u00A9 {{year}} Link & Live. Todos los derechos reservados."
+        },
+        en: {
+            "nav.services": "Services",
+            "nav.process": "Process",
+            "nav.testimonials": "Testimonials",
+            "nav.about": "About Us",
+            "nav.contact": "Contact",
+            "cookie.title": "Cookie Policy",
+            "cookie.text": "This site does not use its own cookies. Cookies are only used when you book an appointment through Calendly.",
+            "cookie.subtext": "Your privacy matters.",
+            "cookie.link": "Learn more",
+            "hero.hook": "Settle in Europe Without Surprises",
+            "hero.headline": "Clear and reliable immigration advice",
+            "hero.subheadline": "A clear plan. A real team. Support that actually works.",
+            "hero.cta": "Book a call now",
+            "hero.social1": "Free initial consultation",
+            "hero.social2": "Specialized in Spanish immigration",
+            "hero.social3": "Over <strong>50 people</strong> have already trusted us",
+            "services.title": "Services",
+            "services.pareja.title": "Domestic Partnership",
+            "services.pareja.desc": "Official registration of your partnership to obtain residency.",
+            "services.nie.title": "NIE",
+            "services.nie.desc": "Foreigner identification number to work legally.",
+            "services.ciudadania.title": "Spanish Citizenship",
+            "services.ciudadania.desc": "Obtain Spanish nationality through residency.",
+            "services.housing.title": "Housing",
+            "services.housing.desc": "We find your ideal home in Europe.",
+            "services.additional": "Additional services",
+            "services.visa.title": "Student Visa",
+            "services.visa.desc": "Permits to study legally in Spain.",
+            "services.nomad.title": "Digital Nomad Visa",
+            "services.nomad.desc": "Permission to work remotely from Spain.",
+            "services.swapping.title": "Swapping",
+            "services.swapping.desc": "Accommodation and services exchange.",
+            "services.empadronamiento.title": "Registration & Bank Account",
+            "services.empadronamiento.desc": "Official registration and Spanish bank account opening.",
+            "services.docs.title": "Legalized Documents",
+            "services.docs.desc": "Apostilles and background checks from Argentina/Uruguay.",
+            "services.legal.title": "Legal Advisory",
+            "services.legal.desc": "Specialized consultancy in Spanish law.",
+            "why.title": "Why Link & Live?",
+            "why.intro": "We are not a traditional agency or law firm. What we offer is legal, real, and personal support for people who are moving or need to connect with Europe safely and reliably.",
+            "why.all.title": "Everything in one place",
+            "why.all.desc": "Immigration paperwork, housing, and legal advice integrated into one clear plan.",
+            "why.ready.title": "Arrive fully prepared",
+            "why.ready.desc": "Documents, bank account, housing, and health insurance sorted before you start your new life.",
+            "why.trust.title": "Reliable advice",
+            "why.trust.desc": "A legal team that turns complexity into simple, safe steps.",
+            "why.accompany.title": "Real support",
+            "why.accompany.desc": "Not just information: we guide you every step of the way until you\u2019re settled.",
+            "cities.label": "We mainly operate in",
+            "cities.brussels": "BRUSSELS",
+            "testimonials.title": "Stories that inspire us",
+            "testimonials.1": "\u201CIn one week I had an apartment and paperwork ready in Barcelona.\u201D",
+            "testimonials.1.location": "Montevideo",
+            "testimonials.2": "\u201CTotal clarity at every step, zero confusion with immigration.\u201D",
+            "testimonials.2.location": "Buenos Aires",
+            "testimonials.3": "\u201CThey helped me process my father\u2019s and brother\u2019s Spanish citizenship.\u201D",
+            "testimonials.3.location": "Ciudad de la Costa",
+            "testimonials.4": "\u201CLink & Live arranged my NIE as an EU citizen, making my move to Spain simple and stress-free.\u201D",
+            "testimonials.4.location": "Brussels",
+            "about.title": "About Link & Live",
+            "about.story.header": "Why we started Link & Live",
+            "about.story.body": "We know what it feels like to arrive in a new country without knowing the procedures, without knowing where to live, with the uncertainty of not having everything sorted out. That\u2019s why we designed a service that accompanies you at every step, because we understand that your peace of mind is our priority.",
+            "about.georgina.role": "CEO & Legal Director",
+            "about.georgina.desc": "Lawyer and immigrant. She provides guidance through every procedure with legal backing and the experience of someone who has been through the process. Her personal and professional journey gave rise to Link and Live, a project that brings together law, migration, and real life.",
+            "about.georgina.edu": "Graduated from Universidad de la Rep\u00FAblica (Uruguay) in 2014, with training in Public Policy, Social Rights and Sustainability (UB), Corporate Advisory (UM), and Advanced Civil Liability (UCU).",
+            "about.agustina.role": "Co-Founder & Operations",
+            "about.agustina.desc": "Social media manager and immigrant. She is a photographer, content creator, and hospitality management specialist. Her multidisciplinary experience enables her to understand and advise on what migration involves, bringing a comprehensive perspective to the relocation process.",
+            "about.agustina.edu": "Hospitality and Tourism Management Technician, trained at ITHU \u2013 Polytechnic of Montevideo. She has a solid foundation in management, customer service, and organization within the hotel and tourism sector.",
+            "cta.title": "Ready to start?",
+            "cta.subtitle": "Let\u2019s talk about your immigration project",
+            "cta.button": "Book a free call",
+            "cta.benefit1": "15 minutes",
+            "cta.benefit2": "No commitment",
+            "footer.description": "Specialized immigration advisory for your new life in Europe.",
+            "footer.services": "Services",
+            "footer.contact": "Contact",
+            "footer.privacy": "Privacy",
+            "footer.terms": "Terms of Service",
+            "footer.legal": "Legal Notice",
+            "footer.copyright": "\u00A9 {{year}} Link & Live. All rights reserved."
+        }
+    };
+
+    function applyLanguage(lang) {
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+            var key = el.getAttribute('data-i18n');
+            if (translations[lang] && translations[lang][key]) {
+                el.textContent = translations[lang][key];
+            }
+        });
+        document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
+            var key = el.getAttribute('data-i18n-html');
+            if (translations[lang] && translations[lang][key]) {
+                var text = translations[lang][key];
+                text = text.replace('{{year}}', new Date().getFullYear().toString());
+                el.innerHTML = text;
+            }
+        });
+        document.documentElement.lang = lang;
+        document.querySelectorAll('.lang-option').forEach(function(btn) {
+            if (btn.getAttribute('data-lang') === lang) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+        localStorage.setItem('lang', lang);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var saved = localStorage.getItem('lang');
+        var browserLang = navigator.language.startsWith('en') ? 'en' : 'es';
+        var lang = saved || browserLang;
+
+        if (lang !== 'es') {
+            applyLanguage(lang);
+        }
+
+        document.querySelectorAll('.lang-option').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var selectedLang = btn.getAttribute('data-lang');
+                applyLanguage(selectedLang);
+            });
+        });
+    });
+})();
+</script>
 
         

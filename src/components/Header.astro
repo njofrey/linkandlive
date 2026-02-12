@@ -3,22 +3,32 @@
         <img src="/images/link-and-live.png" alt="Link and Live" width="350" height="98" draggable="false">
     </a>
     <nav class="header-nav">
-        <a href="#services">Servicios</a>
-        <a href="#process">Proceso</a>
-        <a href="#testimonials">Testimonios</a>
-        <a href="#about">Nosotros</a>
-        <a href="#contact">Contacto</a>
+        <a href="#services" data-i18n="nav.services">Servicios</a>
+        <a href="#process" data-i18n="nav.process">Proceso</a>
+        <a href="#testimonials" data-i18n="nav.testimonials">Testimonios</a>
+        <a href="#about" data-i18n="nav.about">Nosotros</a>
+        <a href="#contact" data-i18n="nav.contact">Contacto</a>
+        <div class="lang-toggle" id="lang-toggle">
+            <button class="lang-option active" data-lang="es">ES</button>
+            <button class="lang-option" data-lang="en">EN</button>
+        </div>
     </nav>
-    <button class="header-burger-btn">
-        <span></span>
-        <span></span>
-    </button>
+    <div class="header-actions">
+        <div class="lang-toggle" id="lang-toggle-mobile">
+            <button class="lang-option active" data-lang="es">ES</button>
+            <button class="lang-option" data-lang="en">EN</button>
+        </div>
+        <button class="header-burger-btn">
+            <span></span>
+            <span></span>
+        </button>
+    </div>
 </header>
 
 <div class="mobile-nav">
-    <a href="#services" class="mobile-nav-link">Servicios</a>
-    <a href="#process" class="mobile-nav-link">Proceso</a>
-    <a href="#testimonials" class="mobile-nav-link">Testimonios</a>
-    <a href="#about" class="mobile-nav-link">Nosotros</a>
-    <a href="#contact" class="mobile-nav-link">Contacto</a>
+    <a href="#services" class="mobile-nav-link" data-i18n="nav.services">Servicios</a>
+    <a href="#process" class="mobile-nav-link" data-i18n="nav.process">Proceso</a>
+    <a href="#testimonials" class="mobile-nav-link" data-i18n="nav.testimonials">Testimonios</a>
+    <a href="#about" class="mobile-nav-link" data-i18n="nav.about">Nosotros</a>
+    <a href="#contact" class="mobile-nav-link" data-i18n="nav.contact">Contacto</a>
 </div>

@@ -7,12 +7,12 @@ import Layout from '../layouts/Layout.astro';
     <!-- Cookie Banner -->
     <div id="cookie-banner" class="cookie-banner">
         <div class="cookie-content">
-            <h4 class="cookie-title">Política de cookies</h4>
-            <p class="cookie-text">
+            <h4 class="cookie-title" data-i18n="cookie.title">Política de cookies</h4>
+            <p class="cookie-text" data-i18n="cookie.text">
                 Este sitio no utiliza cookies propias, solo se usan cookies cuando agendas una cita mediante Calendly.
             </p>
             <p class="cookie-subtext">
-                Tu privacidad es importante. <a href="/privacidad" class="cookie-link">Más info</a>
+                <span data-i18n="cookie.subtext">Tu privacidad es importante.</span> <a href="/privacidad" class="cookie-link" data-i18n="cookie.link">Más info</a>
             </p>
         </div>
         <button class="cookie-close" id="cookie-close">×</button>
@@ -22,11 +22,11 @@ import Layout from '../layouts/Layout.astro';
         <section class="hero fade-in">
             <div class="container hero-container">
                 <div class="hero-content">
-                    <p class="hero-hook">Instálate en Europa sin sorpresas</p>
-                    <h1 class="hero-headline">Asesoría migratoria clara y confiable</h1>
-                    <p class="hero-subheadline">Un plan claro. Un equipo real. Un acompañamiento que funciona.</p>
+                    <p class="hero-hook" data-i18n="hero.hook">Instálate en Europa sin sorpresas</p>
+                    <h1 class="hero-headline" data-i18n="hero.headline">Asesoría migratoria clara y confiable</h1>
+                    <p class="hero-subheadline" data-i18n="hero.subheadline">Un plan claro. Un equipo real. Un acompañamiento que funciona.</p>
                     <div class="hero-cta">
-                        <button class="hero-btn" id="hero-calendly-button">
+                        <button class="hero-btn" id="hero-calendly-button" data-i18n="hero.cta">
                             Agendar llamada ahora
                         </button>
                         <div class="social-proof">
@@ -34,19 +34,19 @@ import Layout from '../layouts/Layout.astro';
                                 <svg class="inline-check" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                                     <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                 </svg>
-                                Primera consulta gratuita
+                                <span data-i18n="hero.social1">Primera consulta gratuita</span>
                             </p>
                             <p class="social-text">
                                 <svg class="inline-check" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                                     <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                 </svg>
-                                Especializadas en migración española
+                                <span data-i18n="hero.social2">Especializadas en migración española</span>
                             </p>
                             <p class="social-text">
                                 <svg class="inline-check" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                                     <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                 </svg>
-                                Más de <strong>50 personas</strong> ya confiaron en nosotros
+                                <span data-i18n-html="hero.social3">Más de <strong>50 personas</strong> ya confiaron en nosotros</span>
                             </p>
                         </div>
                     </div>
@@ -57,71 +57,71 @@ import Layout from '../layouts/Layout.astro';
         <section id="services" class="services section fade-in">
             <div class="container">
                 <div class="services-main">
-                    <h2 class="services-section-title">Servicios</h2>
+                    <h2 class="services-section-title" data-i18n="services.title">Servicios</h2>
                     <div class="services-grid-main">
                         <div class="service-card service-card-primary">
                             <div class="service-icon">📋</div>
-                            <h3 class="service-title">Pareja de Hecho</h3>
-                            <p class="service-description">Registro oficial de tu unión para obtener residencia.</p>
+                            <h3 class="service-title" data-i18n="services.pareja.title">Pareja de Hecho</h3>
+                            <p class="service-description" data-i18n="services.pareja.desc">Registro oficial de tu unión para obtener residencia.</p>
                         </div>
                         <div class="service-card service-card-primary">
                             <div class="service-icon">🏛️</div>
-                            <h3 class="service-title">NIE</h3>
-                            <p class="service-description">Número de identificación de extranjero para trabajar.</p>
+                            <h3 class="service-title" data-i18n="services.nie.title">NIE</h3>
+                            <p class="service-description" data-i18n="services.nie.desc">Número de identificación de extranjero para trabajar.</p>
                         </div>
                         <div class="service-card service-card-primary">
                             <div class="service-icon">🇪🇸</div>
-                            <h3 class="service-title">Ciudadanía Española</h3>
-                            <p class="service-description">Obtén la nacionalidad española por residencia.</p>
+                            <h3 class="service-title" data-i18n="services.ciudadania.title">Ciudadanía Española</h3>
+                            <p class="service-description" data-i18n="services.ciudadania.desc">Obtén la nacionalidad española por residencia.</p>
                         </div>
                         <div class="service-card service-card-primary">
                             <div class="service-icon">🏠</div>
-                            <h3 class="service-title">Housing</h3>
-                            <p class="service-description">Encontramos tu hogar ideal en Europa.</p>
+                            <h3 class="service-title" data-i18n="services.housing.title">Housing</h3>
+                            <p class="service-description" data-i18n="services.housing.desc">Encontramos tu hogar ideal en Europa.</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="services-additional">
                     <button class="accordion-toggle" id="additional-services-toggle">
-                        <span class="accordion-text">Servicios complementarios</span>
+                        <span class="accordion-text" data-i18n="services.additional">Servicios complementarios</span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content" id="additional-services-content">
                         <div class="services-grid-additional">
                             <div class="service-card service-card-small">
-                                <h4 class="service-title-small">Visa de Estudios</h4>
-                                <p class="service-description-small">Permisos para estudiar legalmente en España.</p>
+                                <h4 class="service-title-small" data-i18n="services.visa.title">Visa de Estudios</h4>
+                                <p class="service-description-small" data-i18n="services.visa.desc">Permisos para estudiar legalmente en España.</p>
                             </div>
                             <div class="service-card service-card-small">
-                                <h4 class="service-title-small">Visa Nómade Digital</h4>
-                                <p class="service-description-small">Permiso para trabajar remotamente desde España.</p>
+                                <h4 class="service-title-small" data-i18n="services.nomad.title">Visa Nómade Digital</h4>
+                                <p class="service-description-small" data-i18n="services.nomad.desc">Permiso para trabajar remotamente desde España.</p>
                             </div>
                             <div class="service-card service-card-small">
-                                <h4 class="service-title-small">Swapping</h4>
-                                <p class="service-description-small">Intercambio de alojamiento y servicios.</p>
+                                <h4 class="service-title-small" data-i18n="services.swapping.title">Swapping</h4>
+                                <p class="service-description-small" data-i18n="services.swapping.desc">Intercambio de alojamiento y servicios.</p>
                             </div>
                             <div class="service-card service-card-small">
-                                <h4 class="service-title-small">Empadronamiento y Cuenta Bancaria</h4>
-                                <p class="service-description-small">Alta oficial y apertura de cuenta española.</p>
+                                <h4 class="service-title-small" data-i18n="services.empadronamiento.title">Empadronamiento y Cuenta Bancaria</h4>
+                                <p class="service-description-small" data-i18n="services.empadronamiento.desc">Alta oficial y apertura de cuenta española.</p>
                             </div>
                             <div class="service-card service-card-small">
-                                <h4 class="service-title-small">Documentos Legalizados</h4>
-                                <p class="service-description-small">Apostillas y antecedentes desde Argentina/Uruguay.</p>
+                                <h4 class="service-title-small" data-i18n="services.docs.title">Documentos Legalizados</h4>
+                                <p class="service-description-small" data-i18n="services.docs.desc">Apostillas y antecedentes desde Argentina/Uruguay.</p>
                             </div>
                             <div class="service-card service-card-small">
-                                <h4 class="service-title-small">Asesoría Legal</h4>
-                                <p class="service-description-small">Consultoría especializada en derecho español.</p>
+                                <h4 class="service-title-small" data-i18n="services.legal.title">Asesoría Legal</h4>
+                                <p class="service-description-small" data-i18n="services.legal.desc">Consultoría especializada en derecho español.</p>
                             </div>
                         </div>
                         
                         <ul class="services-list-mobile">
-                            <li class="service-list-item">Visa de Estudios</li>
-                            <li class="service-list-item">Visa Nómade Digital</li>
-                            <li class="service-list-item">Swapping</li>
-                            <li class="service-list-item">Empadronamiento y Cuenta Bancaria</li>
-                            <li class="service-list-item">Documentos Legalizados</li>
-                            <li class="service-list-item">Asesoría Legal</li>
+                            <li class="service-list-item" data-i18n="services.visa.title">Visa de Estudios</li>
+                            <li class="service-list-item" data-i18n="services.nomad.title">Visa Nómade Digital</li>
+                            <li class="service-list-item" data-i18n="services.swapping.title">Swapping</li>
+                            <li class="service-list-item" data-i18n="services.empadronamiento.title">Empadronamiento y Cuenta Bancaria</li>
+                            <li class="service-list-item" data-i18n="services.docs.title">Documentos Legalizados</li>
+                            <li class="service-list-item" data-i18n="services.legal.title">Asesoría Legal</li>
                         </ul>
                     </div>
                 </div>
@@ -131,56 +131,56 @@ import Layout from '../layouts/Layout.astro';
         <section id="process" class="problem-solution section fade-in">
             <div class="container">
                 <div class="solution-content">
-                    <h2 class="solution-title">¿Por qué Link & Live?</h2>
+                    <h2 class="solution-title" data-i18n="why.title">¿Por qué Link & Live?</h2>
                     
                     <div class="value-props">
                         <div class="value-item">
                             <div class="value-content value-intro">
-                                <p class="value-description">No somos una gestoría ni un despacho tradicional. Lo que ofrecemos es acompañamiento legal, real y personal, para personas que se mudan o necesitan conectar con Europa de forma segura y confiable.</p>
+                                <p class="value-description" data-i18n="why.intro">No somos una gestoría ni un despacho tradicional. Lo que ofrecemos es acompañamiento legal, real y personal, para personas que se mudan o necesitan conectar con Europa de forma segura y confiable.</p>
                             </div>
                         </div>
                         
                         <div class="value-item">
                             <div class="value-icon">—</div>
                             <div class="value-content">
-                                <h3 class="value-title">Todo en un solo lugar</h3>
-                                <p class="value-description">Trámites migratorios, vivienda y asesoría legal integrados en un plan claro.</p>
+                                <h3 class="value-title" data-i18n="why.all.title">Todo en un solo lugar</h3>
+                                <p class="value-description" data-i18n="why.all.desc">Trámites migratorios, vivienda y asesoría legal integrados en un plan claro.</p>
                             </div>
                         </div>
                         
                         <div class="value-item">
                             <div class="value-icon">—</div>
                             <div class="value-content">
-                                <h3 class="value-title">Llegá con todo listo</h3>
-                                <p class="value-description">Papeles, cuenta, vivienda y seguro médico resueltos antes de empezar tu nueva vida.</p>
+                                <h3 class="value-title" data-i18n="why.ready.title">Llegá con todo listo</h3>
+                                <p class="value-description" data-i18n="why.ready.desc">Papeles, cuenta, vivienda y seguro médico resueltos antes de empezar tu nueva vida.</p>
                             </div>
                         </div>
                         
                         <div class="value-item">
                             <div class="value-icon">—</div>
                             <div class="value-content">
-                                <h3 class="value-title">Asesoría confiable</h3>
-                                <p class="value-description">Un equipo legal que traduce lo complejo en pasos simples y seguros.</p>
+                                <h3 class="value-title" data-i18n="why.trust.title">Asesoría confiable</h3>
+                                <p class="value-description" data-i18n="why.trust.desc">Un equipo legal que traduce lo complejo en pasos simples y seguros.</p>
                             </div>
                         </div>
                         
                         <div class="value-item">
                             <div class="value-icon">—</div>
                             <div class="value-content">
-                                <h3 class="value-title">Acompañamiento real</h3>
-                                <p class="value-description">No solo información: te guiamos en cada paso hasta que estés instalad@.</p>
+                                <h3 class="value-title" data-i18n="why.accompany.title">Acompañamiento real</h3>
+                                <p class="value-description" data-i18n="why.accompany.desc">No solo información: te guiamos en cada paso hasta que estés instalad@.</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="cities-section">
-                        <p class="cities-label">Operamos principalmente en</p>
+                        <p class="cities-label" data-i18n="cities.label">Operamos principalmente en</p>
                         <p class="cities-text">
                             <span class="city">BARCELONA</span>
                             <span class="separator">·</span>
                             <span class="city">AMSTERDAM</span>
                             <span class="separator">·</span>
-                            <span class="city">BRUSELAS</span>
+                            <span class="city" data-i18n="cities.brussels">BRUSELAS</span>
                         </p>
                     </div>
                 </div>
@@ -190,38 +190,38 @@ import Layout from '../layouts/Layout.astro';
         <section id="testimonials" class="testimonials section fade-in">
             <div class="container">
                 <div class="testimonials-content">
-                    <h2 class="testimonials-title">Historias que nos inspiran</h2>
+                    <h2 class="testimonials-title" data-i18n="testimonials.title">Historias que nos inspiran</h2>
                     
                     <div class="testimonials-cards">
                         <div class="testimonial-card card-1">
-                            <p class="testimonial-text">"En una semana tenía piso y papeles listos en Barcelona."</p>
+                            <p class="testimonial-text" data-i18n="testimonials.1">"En una semana tenía piso y papeles listos en Barcelona."</p>
                             <div class="testimonial-author">
                                 <span class="author-name">Jorge</span>
-                                <span class="author-location">Montevideo</span>
+                                <span class="author-location" data-i18n="testimonials.1.location">Montevideo</span>
                             </div>
                         </div>
-                        
+
                         <div class="testimonial-card card-2">
-                            <p class="testimonial-text">"Claridad total en cada paso, cero confusión con extranjería."</p>
+                            <p class="testimonial-text" data-i18n="testimonials.2">"Claridad total en cada paso, cero confusión con extranjería."</p>
                             <div class="testimonial-author">
                                 <span class="author-name">Delfina</span>
-                                <span class="author-location">Buenos Aires</span>
+                                <span class="author-location" data-i18n="testimonials.2.location">Buenos Aires</span>
                             </div>
                         </div>
-                        
+
                         <div class="testimonial-card card-3">
-                            <p class="testimonial-text">"Me ayudaron a tramitar la ciudadanía española de mi padre y mi hermano."</p>
+                            <p class="testimonial-text" data-i18n="testimonials.3">"Me ayudaron a tramitar la ciudadanía española de mi padre y mi hermano."</p>
                             <div class="testimonial-author">
                                 <span class="author-name">Luciana</span>
-                                <span class="author-location">Ciudad de la Costa</span>
+                                <span class="author-location" data-i18n="testimonials.3.location">Ciudad de la Costa</span>
                             </div>
                         </div>
-                        
+
                         <div class="testimonial-card card-4">
-                            <p class="testimonial-text">"Link & Live arranged my NIE as an EU citizen, making my move to Spain simple and stress-free."</p>
+                            <p class="testimonial-text" data-i18n="testimonials.4">"Link & Live arranged my NIE as an EU citizen, making my move to Spain simple and stress-free."</p>
                             <div class="testimonial-author">
                                 <span class="author-name">Hugues</span>
-                                <span class="author-location">Bruselas</span>
+                                <span class="author-location" data-i18n="testimonials.4.location">Bruselas</span>
                             </div>
                         </div>
                     </div>
@@ -233,7 +233,7 @@ import Layout from '../layouts/Layout.astro';
             <div class="container">
                 <div class="about-content">
                     <div class="about-header">
-                        <h2 class="about-title">About Link & Live</h2>
+                        <h2 class="about-title" data-i18n="about.title">About Link & Live</h2>
                         <div class="team-photo">
                             <img src="/images/Link-&-Live-founders.jpg" alt="Link & Live Founders" class="team-photo-img" />
                         </div>
@@ -241,8 +241,8 @@ import Layout from '../layouts/Layout.astro';
                     
                     <div class="story-section">
                         <div class="story-content">
-                            <h3 class="story-header">Por qué empezamos Link & Live</h3>
-                            <p class="story-body">Sabemos lo que se siente llegar a un país nuevo, sin conocer los trámites, sin saber dónde vivir, con la incertidumbre de no tener todo resuelto. Por eso diseñamos un servicio que te acompañe en cada paso, porque entendemos que tu tranquilidad es nuestra prioridad.</p>
+                            <h3 class="story-header" data-i18n="about.story.header">Por qué empezamos Link & Live</h3>
+                            <p class="story-body" data-i18n="about.story.body">Sabemos lo que se siente llegar a un país nuevo, sin conocer los trámites, sin saber dónde vivir, con la incertidumbre de no tener todo resuelto. Por eso diseñamos un servicio que te acompañe en cada paso, porque entendemos que tu tranquilidad es nuestra prioridad.</p>
                         </div>
                     </div>
                     
@@ -254,9 +254,9 @@ import Layout from '../layouts/Layout.astro';
                                 </div>
                                 <div class="member-info">
                                     <h3 class="member-name">Georgina Dell'Acqua</h3>
-                                    <p class="member-role">CEO & Directora Legal</p>
-                                    <p class="member-description">Abogada y migrante. Ofrece acompañamiento en cada trámite con el respaldo legal y la experiencia de quien ya atravesó el proceso. Su recorrido personal y profesional dieron origen a Link and Live, un proyecto que une derecho, migración y vida real.</p>
-                                    <p class="member-education">Egresada de la Universidad de la República (Uruguay) en 2014, cuenta con formación en Políticas Públicas, Derechos Sociales y Sostenibilidad (UB), Asesoramiento Corporativo (UM) y Responsabilidad Civil Profundizada (UCU).</p>
+                                    <p class="member-role" data-i18n="about.georgina.role">CEO & Directora Legal</p>
+                                    <p class="member-description" data-i18n="about.georgina.desc">Abogada y migrante. Ofrece acompañamiento en cada trámite con el respaldo legal y la experiencia de quien ya atravesó el proceso. Su recorrido personal y profesional dieron origen a Link and Live, un proyecto que une derecho, migración y vida real.</p>
+                                    <p class="member-education" data-i18n="about.georgina.edu">Egresada de la Universidad de la República (Uruguay) en 2014, cuenta con formación en Políticas Públicas, Derechos Sociales y Sostenibilidad (UB), Asesoramiento Corporativo (UM) y Responsabilidad Civil Profundizada (UCU).</p>
                                 </div>
                             </div>
                             
@@ -266,9 +266,9 @@ import Layout from '../layouts/Layout.astro';
                                 </div>
                                 <div class="member-info">
                                     <h3 class="member-name">Agustina Yusef</h3>
-                                    <p class="member-role">Co-Fundadora & Operaciones</p>
-                                    <p class="member-description">Social media manager y migrante. Es fotógrafa, creadora de contenido y técnica en gestión hotelera. Su experiencia multidisciplinaria la capacita para entender y asesorar sobre lo que implica migrar, aportando una perspectiva integral al proceso de relocalización.</p>
-                                    <p class="member-education">Técnica en Gerencia de Hoteles y Alojamientos Turísticos, formada en ITHU – Politécnico de Montevideo. Cuenta con una sólida base en gestión, atención al cliente y organización dentro del sector hotelero y turístico.</p>
+                                    <p class="member-role" data-i18n="about.agustina.role">Co-Fundadora & Operaciones</p>
+                                    <p class="member-description" data-i18n="about.agustina.desc">Social media manager y migrante. Es fotógrafa, creadora de contenido y técnica en gestión hotelera. Su experiencia multidisciplinaria la capacita para entender y asesorar sobre lo que implica migrar, aportando una perspectiva integral al proceso de relocalización.</p>
+                                    <p class="member-education" data-i18n="about.agustina.edu">Técnica en Gerencia de Hoteles y Alojamientos Turísticos, formada en ITHU – Politécnico de Montevideo. Cuenta con una sólida base en gestión, atención al cliente y organización dentro del sector hotelero y turístico.</p>
                                 </div>
                             </div>
                         </div>
@@ -281,10 +281,10 @@ import Layout from '../layouts/Layout.astro';
         <section class="cta-final section fade-in">
             <div class="container">
                 <div class="cta-content">
-                    <h2>¿Empezamos?</h2>
-                    <p class="cta-subtitle">Hablemos de tu proyecto migratorio</p>
+                    <h2 data-i18n="cta.title">¿Empezamos?</h2>
+                    <p class="cta-subtitle" data-i18n="cta.subtitle">Hablemos de tu proyecto migratorio</p>
                     <div class="cta-cta">
-                        <button class="cta-btn" id="cta-calendly-button">
+                        <button class="cta-btn" id="cta-calendly-button" data-i18n="cta.button">
                             Agendar llamada gratuita
                         </button>
                         <div class="cta-benefits">
@@ -292,13 +292,13 @@ import Layout from '../layouts/Layout.astro';
                                 <svg class="inline-check" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                                     <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                 </svg>
-                                15 minutos
+                                <span data-i18n="cta.benefit1">15 minutos</span>
                             </p>
                             <p class="social-text">
                                 <svg class="inline-check" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                                     <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                 </svg>
-                                Sin compromiso
+                                <span data-i18n="cta.benefit2">Sin compromiso</span>
                             </p>
                         </div>
                     </div>
@@ -311,31 +311,31 @@ import Layout from '../layouts/Layout.astro';
                 <div class="footer-content">
                     <div class="footer-section">
                         <h3>Link & Live</h3>
-                        <p>Asesoría migratoria especializada para tu nueva vida en Europa.</p>
+                        <p data-i18n="footer.description">Asesoría migratoria especializada para tu nueva vida en Europa.</p>
                     </div>
                     <div class="footer-section">
-                        <h4>Servicios</h4>
-                        <a href="#services">Pareja de Hecho</a>
+                        <h4 data-i18n="footer.services">Servicios</h4>
+                        <a href="#services" data-i18n="services.pareja.title">Pareja de Hecho</a>
                         <a href="#services">NIE</a>
-                        <a href="#services">Ciudadanía Española</a>
-                        <a href="#services">Visa de Estudios</a>
+                        <a href="#services" data-i18n="services.ciudadania.title">Ciudadanía Española</a>
+                        <a href="#services" data-i18n="services.visa.title">Visa de Estudios</a>
                     </div>
                     <div class="footer-section">
-                        <h4>Contacto</h4>
-                        <a href="https://wa.me/+34692094141">WhatsApp</a>
+                        <h4 data-i18n="footer.contact">Contacto</h4>
+                        <a href="https://wa.me/32492830729">WhatsApp</a>
                         <a href="https://instagram.com/link.andlive">Instagram</a>
                         <a href="mailto:info@linkandlive.eu">Email</a>
                     </div>
                 </div>
                 <div class="footer-legal">
                     <div class="footer-links">
-                        <a href="/privacidad">Privacidad</a>
-                        <a href="/terminos">Términos de Servicio</a>
-                        <a href="/aviso-legal">Aviso Legal</a>
+                        <a href="/privacidad" data-i18n="footer.privacy">Privacidad</a>
+                        <a href="/terminos" data-i18n="footer.terms">Términos de Servicio</a>
+                        <a href="/aviso-legal" data-i18n="footer.legal">Aviso Legal</a>
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <p>&copy; {new Date().getFullYear()} Link & Live. Todos los derechos reservados.</p>
+                    <p data-i18n-html="footer.copyright">&copy; {new Date().getFullYear()} Link & Live. Todos los derechos reservados.</p>
                 </div>
             </div>
         </footer>
