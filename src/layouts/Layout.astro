@@ -1,5 +1,6 @@
 ---
 import Header from '../components/Header.astro';
+const { title = 'Link & Live - Asesoría Migratoria España | NIE, Pareja de Hecho, Ciudadanía' } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="es">
@@ -27,7 +28,7 @@ import Header from '../components/Header.astro';
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     
     <!-- Content Security Policy -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://assets.calendly.com https://calendly.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://assets.calendly.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://calendly.com; frame-src https://calendly.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://assets.calendly.com https://calendly.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://assets.calendly.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://calendly.com https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net; frame-src https://calendly.com;">
     
     <!-- HTTPS Strict Transport Security -->
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
@@ -35,7 +36,7 @@ import Header from '../components/Header.astro';
     <!-- Permissions Policy -->
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()">
     
-    <title>Link & Live - Asesoría Migratoria España | NIE, Pareja de Hecho, Ciudadanía</title>
+    <title>{title}</title>
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -53,6 +54,29 @@ import Header from '../components/Header.astro';
     
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" crossorigin="anonymous">
     
+    <!-- Google Consent Mode v2 — debe ejecutarse antes de que GA cargue -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'wait_for_update': 500
+      });
+      // Restaurar consentimiento si el usuario ya eligió
+      if (typeof localStorage !== 'undefined' && localStorage.getItem('cookieConsent') === 'granted') {
+        gtag('consent', 'update', { 'analytics_storage': 'granted' });
+      }
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3VPXLMXYLQ"></script>
+    <script>
+      gtag('js', new Date());
+      gtag('config', 'G-3VPXLMXYLQ');
+    </script>
+
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
@@ -649,8 +673,10 @@ document.addEventListener('DOMContentLoaded', function() {
             "nav.about": "Nosotros",
             "nav.contact": "Contacto",
             "cookie.title": "Pol\u00EDtica de cookies",
-            "cookie.text": "Este sitio no utiliza cookies propias, solo se usan cookies cuando agendas una cita mediante Calendly.",
+            "cookie.text": "Usamos cookies de anal\u00EDtica b\u00E1sica y de Calendly al agendar citas.",
             "cookie.subtext": "Tu privacidad es importante.",
+            "cookie.accept": "Aceptar",
+            "cookie.reject": "Rechazar",
             "cookie.link": "M\u00E1s info",
             "hero.hook": "Inst\u00E1late en Europa sin sorpresas",
             "hero.headline": "Asesor\u00EDa migratoria clara y confiable",
@@ -731,8 +757,10 @@ document.addEventListener('DOMContentLoaded', function() {
             "nav.about": "About Us",
             "nav.contact": "Contact",
             "cookie.title": "Cookie Policy",
-            "cookie.text": "This site does not use its own cookies. Cookies are only used when you book an appointment through Calendly.",
+            "cookie.text": "We use basic analytics cookies and Calendly cookies when booking appointments.",
             "cookie.subtext": "Your privacy matters.",
+            "cookie.accept": "Accept",
+            "cookie.reject": "Decline",
             "cookie.link": "Learn more",
             "hero.hook": "Settle in Europe Without Surprises",
             "hero.headline": "Clear and reliable immigration advice",

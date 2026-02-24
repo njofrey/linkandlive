@@ -9,7 +9,9 @@ export const translations = {
 
     // Cookie banner
     "cookie.title": "Política de cookies",
-    "cookie.text": "Este sitio no utiliza cookies propias, solo se usan cookies cuando agendas una cita mediante Calendly.",
+    "cookie.text": "Usamos cookies de analítica básica y de Calendly al agendar citas.",
+    "cookie.accept": "Aceptar",
+    "cookie.reject": "Rechazar",
     "cookie.subtext": "Tu privacidad es importante.",
     "cookie.link": "Más info",
 
@@ -110,8 +112,10 @@ export const translations = {
 
     // Cookie banner
     "cookie.title": "Cookie Policy",
-    "cookie.text": "This site does not use its own cookies. Cookies are only used when you book an appointment through Calendly.",
+    "cookie.text": "We use basic analytics cookies and Calendly cookies when booking appointments.",
     "cookie.subtext": "Your privacy matters.",
+    "cookie.accept": "Accept",
+    "cookie.reject": "Decline",
     "cookie.link": "Learn more",
 
     // Hero
